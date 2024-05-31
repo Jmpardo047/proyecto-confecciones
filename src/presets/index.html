@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Agregar Materia Prima</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    </head>
+    <body class="bg-gray-100 flex justify-center items-center h-screen">
+        <div id="container-form" class="bg-white p-8 rounded-lg shadow-md w-5/6 max-w-4xl">
+            <form id="materiaPrimaForm" class="flex gap-8">
+                <div class="flex flex-col w-1/3">
+                    <label for="nombre" class="mb-2 font-bold">Nombre:</label>
+                    <input type="text" name="nombre" id="nombre" class="p-2 mb-4 border border-gray-300 rounded">
+
+                    <label for="descripcion" class="mb-2 font-bold">Descripcion:</label>
+                    <input type="text" id="descripcion" name="descripcion" class="p-2 mb-4 border border-gray-300 rounded">
+                    
+                    <label for="categoria" class="mb-2 font-bold">Categoria:</label>
+                    <input type="text" id="categoria" name="categoria" class="p-2 mb-4 border border-gray-300 rounded">
+                
+                    <label for="proveedor" class="mb-2 font-bold">Proveedor:</label>
+                    <input type="text" id="proveedor" name="proveedor" class="p-2 mb-4 border border-gray-300 rounded">
+                </div>
+
+                <div class="flex flex-col w-1/3">
+                    <label for="costoPorUnidad" class="mb-2 font-bold">Costo por Unidad:</label>
+                    <input type="number" step="0.01" name="costoPorUnidad" id="costoPorUnidad" class="p-2 mb-4 border border-gray-300 rounded">
+
+                    <label for="unidadDeMedida" class="mb-2 font-bold">Unidad de Medida:</label>
+                    <input type="text" name="unidadDeMedida" id="unidadDeMedida" class="p-2 mb-4 border border-gray-300 rounded">
+
+                    <label for="cantidadEnStock" class="mb-2 font-bold">Cantidad En Stock:</label>
+                    <input type="number" step="0.1" name="cantidadEnStock" id="cantidadEnStock" class="p-2 mb-4 border border-gray-300 rounded">
+
+                    <label for="fechaDeAdquisicion" class="mb-2 font-bold">Fecha De Adquisicion:</label>
+                    <input type="date" id="fechaDeAdquisicion" name="fechaDeAdquisicion" class="p-2 mb-4 border border-gray-300 rounded">
+                </div>
+
+                <div class="flex flex-col w-1/3">
+                    <label for="ubicacionEnAlmacen" class="mb-2 font-bold">Ubicacion En Almacen:</label>
+                    <input type="text" id="ubicacionEnAlmacen" name="ubicacionEnAlmacen" class="p-2 mb-4 border border-gray-300 rounded">
+
+                    <label for="notasAdicionales" class="mb-2 font-bold">Notas Adicionales:</label>
+                    <input type="text" id="notasAdicionales" name="notasAdicionales" class="p-2 mb-4 border border-gray-300 rounded">
+
+                    <input type="button" value="Guardar" onclick="guardarDatos()" class="mt-auto bg-green-500 text-white p-2 rounded hover:bg-green-600 cursor-pointer">
+                </div>
+
+            </form>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

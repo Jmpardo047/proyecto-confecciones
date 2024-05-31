@@ -1,0 +1,17 @@
+{
+    "materias_primas": [
+        {
+            "id":"",
+            "nombre":"",
+            "descripcion":"",
+            "categoria":"",
+            "proveedor":"",
+            "costo_por_unidad":0.0,
+            "unidad_de_medida":"",
+            "cantidad_en_stock":0.0,
+            "decha_de_adquisicion":"",
+            "ubicacion_en_almacen":"",
+            "notas_adicionales":""
+        }
+    ]
+}
