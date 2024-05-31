@@ -33,4 +33,6 @@
     position: absolute;
     bottom: 2em;
     right: 2.5em;
+    width: fit-content;
+    height: min-content;
   }
