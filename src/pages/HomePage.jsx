@@ -5,7 +5,9 @@ export const HomePage = () => {
   return (
     <>
     <BannerComponent/>
-    <AddMateriaComponent/>
+    <div className="button-material">
+      <AddMateriaComponent/>
+    </div>
     </>
   )
 }

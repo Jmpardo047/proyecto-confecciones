@@ -1,17 +1,17 @@
 import React from 'react'
-
+import { useState,useEffect } from 'react'
 export const AddMateriaComponent = () => {
   return (
     <>
     <button
-    className="group cursor-pointer outline-none hover:rotate-90 duration-300 button-material"
+    className="group cursor-pointer outline-none hover:rotate-90 duration-300"
     title="Add New"
     >
         <svg
             className="stroke-teal-500 fill-none group-hover:fill-teal-800 group-active:stroke-teal-200 group-active:fill-teal-600 group-active:duration-0 duration-300"
             viewBox="0 0 24 24"
-            height="50px"
-            width="50px"
+            height="4.5em"
+            width="4.5em"
             xmlns="http://www.w3.org/2000/svg"
         >
             <path
