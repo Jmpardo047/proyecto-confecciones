@@ -1,10 +1,10 @@
 import React from 'react'
 
-export const InputComponent = ({type,id,value}) => {
+export const InputComponent = ({txt,type,code,value,onChange}) => {
   return (
     <>
-        <label className="mb-2 font-bold">Nombre:</label>
-        <input type="text" name="nombre" id="nombre" value={formData.firstName} onChange={handleChange} className="p-2 mb-4 border border-gray-300 rounded" required/>
+        <label htmlFor={code} className="mb-2 font-bold">{txt}</label>
+        <input type={type} name={code} id={code} value={value} onChange={onChange} className="p-2 mb-4 border border-gray-300 rounded" required/>
     </>
   )
 }
