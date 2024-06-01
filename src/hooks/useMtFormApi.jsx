@@ -10,14 +10,14 @@ export const useMtFormApi = (endpoint) =>{
                     },
                     body: JSON.stringify(form),
             });
-            console.log(consumo.body);
+            console.log(postForm.body);
         
-            if (!consumo.ok) {
-                const somethingBad = await consumo.text();
-                throw new Error(`Error => ${consumo.statusText} - ${somethingBad}`);
+            if (!postForm.ok) {
+                const somethingBad = await postForm.text();
+                throw new Error(`Error => ${postForm.statusText} - ${somethingBad}`);
             }
             
-            const output = await consumo.json();
+            const output = await postForm.json();
             console.log('API response:', output)
         }
         catch (error) {
