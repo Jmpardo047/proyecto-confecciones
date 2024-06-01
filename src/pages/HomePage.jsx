@@ -3,6 +3,8 @@ import BannerComponent from '../components/home/BannerComponent'
 import { AddMateriaComponent } from '../components/home/AddMateriaComponent'
 import { MaterialFormComponent } from '../components/home/MaterialFormComponent'
 import { useState } from 'react'
+import { RouteButtonComponent } from '../components/home/RouteButtonComponent'
+import { ButtonDecorComponent } from '../components/home/ButtonDecorComponent'
 export const HomePage = () => {
   const [formActive, setFormActive] = useState(false)
   const toggleDisplay = (event) =>{

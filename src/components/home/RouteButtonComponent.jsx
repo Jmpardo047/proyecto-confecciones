@@ -1,11 +1,15 @@
 import React from 'react'
-
-const RouteButtonComponent = () => {
+import { Link,NavLink } from 'react-router-dom'
+import { ButtonDecorComponent } from './ButtonDecorComponent'
+export const RouteButtonComponent = () => {
   return (
-    <div>
-      
+    <><div>
+        <Link className="link-button" to="/Form">
+            <ButtonDecorComponent/>
+        </Link>
     </div>
+
+    </>
   )
 }
 
-export default RouteButtonComponent
