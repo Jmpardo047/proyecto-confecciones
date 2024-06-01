@@ -17,6 +17,7 @@
     padding: 0;
   }
   .banner{
+    z-index: 100;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,9 +31,42 @@
   }
 
   .button-material{
-    position: absolute;
+    position: fixed;
     bottom: 2em;
     right: 2.5em;
     width: fit-content;
     height: min-content;
+  }
+
+  .button-material:hover::after {
+    content: "Agregar Materias Prima"; /* Texto del aviso */
+    font-size: 0.9em;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    padding: 9px;
+    border-radius: 5px;
+    bottom: 100%;
+    left: 0;
+    bottom: 1.65em;
+    transform: translateX(-100%);
+    white-space: nowrap;
+  }
+  .form{
+    position: fixed;
+    top: 8em;
+    left: 20em;
+  }
+  .overlay{
+    position: fixed;
+    z-index: 2;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  .form-x{
+    position: absolute;
+    top: -1.5em;
+    right: -1.5em;
+    cursor: pointer;
   }
