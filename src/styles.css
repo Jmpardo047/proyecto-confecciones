@@ -28,6 +28,18 @@
         text-align: center;
     }
   }
+    .banner-form{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color:#33DAFF;
+      padding: 2em 0;
+      height: 25vh;
+      color: black;
+      h1{
+          text-align: center;
+      }
+  }
 
   .button-material{
     position: absolute;

@@ -1,10 +1,9 @@
-import React from 'react'
+import { LayoutForm } from "../components/form/LayoutForm"
+
 
 export const FormPage = () => {
   return (
-    <div>
-      Form
-    </div>
+    <LayoutForm></LayoutForm>
   )
 }
 
