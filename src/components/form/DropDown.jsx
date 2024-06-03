@@ -190,7 +190,7 @@ export const DropDown = () => {
                 type="button"
               >
                 
-                Telas
+                Botones
                 <svg
                   className="w-2.5 h-2.5 ms-3 rtl:rotate-180"
                   aria-hidden="true"
