@@ -1,6 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+* { 
+  --show-double-buttons: none; 
+  --scrollbar-border-thickness: 0px; 
+  --scrollbar-width: 10px; 
+  --scrollbar-height: 0px; 
+  --scrollbar-border-radius: 50px; 
+  --scrollbar-thumb-color: #564787; 
+  --scrollbar-track-color: #DBDBDB; 
+} 
+*::-webkit-scrollbar{ 
+  width: var(--scrollbar-width, 20px); 
+  height: var(--scrollbar-height, 20px); 
+}
+*::-webkit-scrollbar-thumb{ 
+  background: var(--scrollbar-thumb-color, #3B82F6); 
+  border: var(--scrollbar-border-thickness, 3px) solid var(--scrollbar-border-color, rgb(255, 255, 255)); 
+  border-radius: var(--scrollbar-border-radius, 4px); 
+}
+*::-webkit-scrollbar-track{ 
+  background: var(--scrollbar-track-color, #A1A1AA); 
+}*::-webkit-scrollbar-corner{ 
+  background: var(--scrollbar-corner-color, #FFFFFF); 
+  border: var(--scrollbar-border-thickness, 3px) solid var(--scrollbar-border-color, rgb(255, 255, 255)); 
+  border-radius: var(--scrollbar-border-radius, 4px); 
+}
+*::-webkit-scrollbar-button:vertical:start:increment, #preview::-webkit-scrollbar-button:vertical:end:decrement, #preview::-webkit-scrollbar-button:horizontal:start:increment, #preview::-webkit-scrollbar-button:horizontal:end:decrement { display: var(--show-double-buttons, none); }
 :root {
     line-height: 1.5;
     font-weight: 400;
@@ -72,7 +98,7 @@
   .form{
     position: fixed;
     top: 8em;
-    left: 20em;
+    left: 20%;
   }
   .overlay{
     position: fixed;
@@ -83,8 +109,8 @@
   }
   .form-x{
     position: absolute;
-    top: -1.5em;
-    right: -1.5em;
+    top: 0.2em;
+    left: 0.2em;
     cursor: pointer;
     z-index: 2;
   }
@@ -102,4 +128,20 @@
     grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
     grid-auto-rows: minmax(200px,1fr);
     grid-auto-flow: dense;
+  }
+
+  .card-container{
+    display: flex;
+    justify-content: center;
+  }
+
+  @media(max-width:800px){
+    .form{
+      position: fixed;
+      top: 2em;
+      left: 9%;
+      height: 90vh;
+      overflow: scroll;
+      overflow-x: hidden;
+    }
   }

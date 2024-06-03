@@ -4,12 +4,21 @@ import {CardComponent} from './CardComponent'
 export const CardsRenderComponent = () => {
   return (
     <>
-        <CardComponent></CardComponent>
-        <CardComponent></CardComponent>
-        <CardComponent></CardComponent>
-        <CardComponent></CardComponent>
-        <CardComponent></CardComponent>
-        
+        <div className="card-container">
+            <CardComponent></CardComponent>
+        </div>
+        <div className="card-container">
+            <CardComponent></CardComponent>
+        </div>
+        <div className="card-container">
+            <CardComponent></CardComponent>
+        </div>
+        <div className="card-container">
+            <CardComponent></CardComponent>
+        </div>
+        <div className="card-container">
+            <CardComponent></CardComponent>
+        </div>
     </>
   )
 }
