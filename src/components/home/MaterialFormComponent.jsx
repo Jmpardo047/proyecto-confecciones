@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useMtFormApi } from '../../hooks/useMtFormApi';
 import { InputComponent } from './InputComponent';
+import { CategoriesComponent } from './CategoriesComponent';
 export const MaterialFormComponent = ({hideForm}) => {
     const {postForm,getApiInfo} = useMtFormApi("/materias_prima")
 
@@ -42,19 +43,19 @@ export const MaterialFormComponent = ({hideForm}) => {
                     <div className="flex flex-col w-1/3">
                         <InputComponent type="text" code="name" txt="Nombre:" value={formData.name} onChange={handleChange}></InputComponent>
                         <InputComponent type="text" code="description" txt="Descripcion:" value={formData.description} onChange={handleChange}></InputComponent>
-                        <InputComponent type="text" code="category" txt="Categoria:" value={formData.category} onChange={handleChange}></InputComponent>
-                        <InputComponent type="text" code="provider" txt="Proveedor:" value={formData.provider} onChange={handleChange}></InputComponent>
+                        <CategoriesComponent code="category" onChange={handleChange}></CategoriesComponent>
+                        <InputComponent type="date" code="date" txt="Fecha De Adquisicion:" value={formData.date} onChange={handleChange}></InputComponent>
                     </div>
 
                     <div className="flex flex-col w-1/3">
                         <InputComponent type="number" code="cost" txt="Costo por Unidad:" value={formData.cost} onChange={handleChange}></InputComponent>
                         <InputComponent type="text" code="measure" txt="Unidad de Medida:" value={formData.measure} onChange={handleChange}></InputComponent>
                         <InputComponent type="number" code="stock" txt="Cantidad En Stock:" value={formData.stock} onChange={handleChange}></InputComponent>
-                        <InputComponent type="date" code="date" txt="Fecha De Adquisicion:" value={formData.date} onChange={handleChange}></InputComponent>
                     </div>
 
                     <div className="flex flex-col w-1/3">
                         <InputComponent type="text" code="ubication" txt="Ubicacion En Almacen:" value={formData.ubication} onChange={handleChange}></InputComponent>
+                        <InputComponent type="text" code="provider" txt="Proveedor:" value={formData.provider} onChange={handleChange}></InputComponent>
                         <InputComponent type="text" code="notes" txt="Notas Adicionales:" value={formData.notes} onChange={handleChange}></InputComponent>
                         <input type="submit" value="Guardar" className="mt-auto bg-violet-700 text-white p-2 rounded hover:bg-violet-900 cursor-pointer" required/>
                     </div>

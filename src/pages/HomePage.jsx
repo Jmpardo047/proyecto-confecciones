@@ -5,6 +5,7 @@ import { MaterialFormComponent } from '../components/home/MaterialFormComponent'
 import { useState } from 'react'
 import { RouteButtonComponent } from '../components/home/RouteButtonComponent'
 import { ButtonDecorComponent } from '../components/home/ButtonDecorComponent'
+import { CardsRenderComponent } from '../components/home/CardsRenderComponent'
 export const HomePage = () => {
   const [formActive, setFormActive] = useState(false)
   const toggleDisplay = (event) =>{
@@ -20,6 +21,9 @@ export const HomePage = () => {
       : null
     }
     <BannerComponent/>
+    <div className="render-cards">
+      <CardsRenderComponent></CardsRenderComponent>
+    </div>  
     <div className="button-material">
       <AddMateriaComponent showForm={(event) => toggleDisplay(event)}/>
     </div>
