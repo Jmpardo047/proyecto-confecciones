@@ -43,7 +43,6 @@ export const MaterialFormComponent = ({hideForm}) => {
                         <InputComponent type="text" code="name" txt="Nombre:" value={formData.name} onChange={handleChange}></InputComponent>
                         <InputComponent type="text" code="description" txt="Descripcion:" value={formData.description} onChange={handleChange}></InputComponent>
                         <InputComponent type="text" code="category" txt="Categoria:" value={formData.category} onChange={handleChange}></InputComponent>
-                        <InputComponent type="text" code="category" txt="Categoria:" value={formData.category} onChange={handleChange}></InputComponent>
                         <InputComponent type="text" code="provider" txt="Proveedor:" value={formData.provider} onChange={handleChange}></InputComponent>
                     </div>
 
