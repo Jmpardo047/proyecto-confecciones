@@ -3,7 +3,8 @@ import { useMtFormApi } from '../../hooks/useMtFormApi';
 import { InputComponent } from './InputComponent';
 import { CategoriesComponent } from './CategoriesComponent';
 export const MaterialFormComponent = ({hideForm}) => {
-    const {postForm,getApiInfo} = useMtFormApi("/materias_prima")
+
+    const {postForm, getApiInfo} = useMtFormApi("/materias_prima")
 
     const [formData, setFormData] = useState({
         id:"",

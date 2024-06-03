@@ -1,9 +1,10 @@
-import { LayoutForm } from "../components/form/LayoutForm"
+import { OptionsSend } from "../components/form/OptionsSend"
+
 
 
 export const FormPage = () => {
   return (
-    <LayoutForm></LayoutForm>
+    <OptionsSend></OptionsSend>
   )
 }
 
