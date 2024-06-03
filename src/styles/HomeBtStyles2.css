@@ -41,6 +41,7 @@
     fill: #cc39a4;
     width: 40px;
   }
+
   
   .card:nth-child(2) .socks {
     opacity: 0;
@@ -76,12 +77,13 @@
     border-radius: 0px;
   }
   
-  .card:nth-child(5) .uiverse {
+  .card:nth-child(5) .home-icon {
     position: absolute;
     margin-left: 0.2em;
     margin-top: 0.2em;
     opacity: 0;
     transition: .2s ease-in-out;
+    width: 40px;
   }
   
   .card:nth-child(6) {
@@ -171,7 +173,7 @@
     opacity: 1;
   }
   
-  .main:hover .uiverse {
+  .main:hover .home-icon {
     opacity: 1;
   }
   
@@ -228,15 +230,15 @@
     animation-fill-mode: forwards;
   }
   
-  .card:nth-child(5):hover .uiverse #paint0_linear_501_142 stop {
+  .card:nth-child(5):hover .home-icon #paint0_linear_501_142 stop {
     stop-color: white;
   }
   
-  .card:nth-child(5):hover .uiverse #paint1_linear_501_142 stop {
+  .card:nth-child(5):hover .home-icon #paint1_linear_501_142 stop {
     stop-color: white;
   }
   
-  .card:nth-child(5):hover .uiverse #paint2_linear_501_142 stop {
+  .card:nth-child(5):hover .home-icon #paint2_linear_501_142 stop {
     stop-color: white;
   }
   
