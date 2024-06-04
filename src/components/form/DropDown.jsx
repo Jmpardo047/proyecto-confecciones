@@ -1,5 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { OptionsSend } from "./OptionsSend";
+import { useMtFormApi } from "../../hooks/useMtFormApi";
+import { DropCategoyComponent } from "./DropCategoyComponent";
+import { CategoryListComponent } from "./CategoryListComponent";
 
 export const DropDown = () => {
 
@@ -8,60 +11,62 @@ export const DropDown = () => {
     const [showDoubleDropdown1, setShowDoubleDropdown1] = useState(false);
     const [showDoubleDropdown2, setShowDoubleDropdown2] = useState(false);
     const [showDoubleDropdown3, setShowDoubleDropdown3] = useState(false);
+    const [showDoubleDropdown4, setShowDoubleDropdown4] = useState(false);
+    const [showDoubleDropdown5, setShowDoubleDropdown5] = useState(false);
   
     const toggleDropdown = () => {
       setShowDropdown(!showDropdown);
     };
-  
-    const toggleDoubleDropdown1 = () => {
-      setShowDoubleDropdown1(!showDoubleDropdown1);
-  
-      setShowDoubleDropdown2(false);
-      setShowDoubleDropdown3(false);
-    };
-  
-    const toggleDoubleDropdown2 = () => {
-      setShowDoubleDropdown2(!showDoubleDropdown2);
 
-      setShowDoubleDropdown1(false);
-      setShowDoubleDropdown3(false);
-    };
-  
-    const toggleDoubleDropdown3 = () => {
-      setShowDoubleDropdown3(!showDoubleDropdown3);
-  
-      setShowDoubleDropdown1(false);
-      setShowDoubleDropdown2(false);
-    };
+    const toggleDoubleDropdown = (data) =>{
+      switch(data){
 
-    //   const showApiData = async () => {
-    //     try {
-    //         const apiData = await getApiInfo();
-    //         console.log(apiData);
+        case 'tela':
+          setShowDoubleDropdown1(!showDoubleDropdown1);
+          setShowDoubleDropdown2(false);
+          setShowDoubleDropdown3(false);
+          setShowDoubleDropdown4(false);
+          setShowDoubleDropdown5(false);
+          return;
 
-    //     } catch (error) {
-    //         console.error('Error al obtener los datos de la API:', error);
-    //     }
-    // };
+        case 'hilo':
+          setShowDoubleDropdown1(false);
+          setShowDoubleDropdown2(!showDoubleDropdown2);
+          setShowDoubleDropdown3(false);
+          setShowDoubleDropdown4(false);
+          setShowDoubleDropdown5(false);
+          return;
 
-    const UserComponent = () => {
+        case 'boton':
+          setShowDoubleDropdown1(false);
+          setShowDoubleDropdown2(false);
+          setShowDoubleDropdown3(!showDoubleDropdown3);
+          setShowDoubleDropdown4(false);
+          setShowDoubleDropdown5(false);
+          return;
 
-      const [userData, setUserData] = useState(null);
-  
-      useEffect(() => {
-          // Lógica para obtener los datos de la API y establecerlos en el estado
-          fetch('https://665a746b003609eda45df1d5.mockapi.io/info_cotizacion')
-              .then(response => response.json())
-              .then(data => setUserData(data))
-              .catch(error => console.error('Error al obtener los datos:', error));
-      }, []);}
+        case 'herramienta':
+          setShowDoubleDropdown1(false);
+          setShowDoubleDropdown2(false);
+          setShowDoubleDropdown3(false);
+          setShowDoubleDropdown4(!showDoubleDropdown4);
+          setShowDoubleDropdown5(false);
+          return;
+        case 'otros':
+          setShowDoubleDropdown1(false);
+          setShowDoubleDropdown2(false);
+          setShowDoubleDropdown3(false);
+          setShowDoubleDropdown4(false);
+          setShowDoubleDropdown5(!showDoubleDropdown5);
+          return;
+      }
+    }
 
   return (
     <>
-    <div>
-      <label htmlFor="countries" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Materia Prima</label>
+    <div className="drop-container realtive">
+      <label htmlFor="materia_prima" className="relative block mb-2 text-sm font-medium text-gray-900 dark:text-white">Materia Prima</label>
           <button
-            id="multiLevelDropdownButton"
             onClick={toggleDropdown}
             className="text-black focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center "
             type="button"
@@ -88,46 +93,21 @@ export const DropDown = () => {
           {/* FormCard menu */}
           {showDropdown && (
             <div
-              id="multi-dropdown"
-              className="z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+              className=" multi-dropdown z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
             >
               <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="multiLevelDropdownButton">
+                <li>
+                  <DropCategoyComponent category="tela" method={(event) => toggleDoubleDropdown(event)} showData={showDoubleDropdown1}/>
+                </li>
 
                 <li>
-                  <button
-                    id="doubleDropdownButton"
-                    onClick={toggleDoubleDropdown1}
-                    className="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    type="button"
-                  >
-                    
-                    Telas
-                    <svg
-                      className="w-2.5 h-2.5 ms-3 rtl:rotate-180"
-                      aria-hidden="true"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 6 10"
-                    >
-                      <path
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="m1 9 4-4-4-4"
-                      />
-                    </svg>
-                  </button>
-                  {showDoubleDropdown1 && (
+                  {showDropdown && (
                     <div
-                      id="doubleDropdown"
                       className="z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
                     >
                       <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="doubleDropdownButton">
                         <li>
-                          <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                          
-                          </a>
+                          <DropCategoyComponent category="hilo" method={(event) => toggleDoubleDropdown(event)} showData={showDoubleDropdown2}/>
                         </li>
                       </ul>
                     </div>
@@ -135,40 +115,13 @@ export const DropDown = () => {
                 </li>
 
                 <li>
-                  <button
-                    id="doubleDropdownButton"
-                    onClick={toggleDoubleDropdown2}
-                    className="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    type="button"
-                  >
-                    
-                    Hilo
-                    <svg
-                      className="w-2.5 h-2.5 ms-3 rtl:rotate-180"
-                      aria-hidden="true"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 6 10"
-                    >
-                      <path
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="m1 9 4-4-4-4"
-                      />
-                    </svg>
-                  </button>
-                  {showDoubleDropdown2 && (
+                  {showDropdown && (
                     <div
-                      id="doubleDropdown"
                       className="z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
                     >
                       <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="doubleDropdownButton">
                         <li>
-                          <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                            Overview
-                          </a>
+                        <DropCategoyComponent category="boton" method={(event) => toggleDoubleDropdown(event)} showData={showDoubleDropdown3}/>
                         </li>
                       </ul>
                     </div>
@@ -176,40 +129,27 @@ export const DropDown = () => {
                 </li>
 
                 <li>
-                  <button
-                    id="doubleDropdownButton"
-                    onClick={toggleDoubleDropdown3}
-                    className="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    type="button"
-                  >
-                    
-                    Botones
-                    <svg
-                      className="w-2.5 h-2.5 ms-3 rtl:rotate-180"
-                      aria-hidden="true"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 6 10"
-                    >
-                      <path
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="m1 9 4-4-4-4"
-                      />
-                    </svg>
-                  </button>
-                  {showDoubleDropdown3 && (
+                  {showDropdown && (
                     <div
-                      id="doubleDropdown"
                       className="z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
                     >
                       <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="doubleDropdownButton">
                         <li>
-                          <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                            Overview
-                          </a>
+                        <DropCategoyComponent category="herramienta" method={(event) => toggleDoubleDropdown(event)} showData={showDoubleDropdown4}/>
+                        </li>
+                      </ul>
+                    </div>
+                  )}
+                </li>
+
+                <li>
+                  {showDropdown && (
+                    <div
+                      className="z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+                    >
+                      <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="doubleDropdownButton">
+                        <li>
+                        <DropCategoyComponent category="otros" method={(event) => toggleDoubleDropdown(event)} showData={showDoubleDropdown5}/>
                         </li>
                       </ul>
                     </div>
