@@ -13,12 +13,12 @@ export const useMtFormApi = (endpoint) =>{
                     body: JSON.stringify(form),
             });
             console.log(postForm.body);
-        
+
             if (!postForm.ok) {
                 const somethingBad = await postForm.text();
                 throw new Error(`Error => ${postForm.statusText} - ${somethingBad}`);
             }
-            
+
             const output = await postForm.json();
             console.log('API response:', output)
         }
@@ -26,7 +26,7 @@ export const useMtFormApi = (endpoint) =>{
             console.log ('Data Error',error)
         }
         }
-        
+
         const getApiInfo = useCallback(async () => {
             try {
                 const response = await fetch(url);

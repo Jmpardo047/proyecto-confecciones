@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { OptionsSend } from "./OptionsSend";
 
 export const DropDown = () => {
 
@@ -33,214 +34,192 @@ export const DropDown = () => {
       setShowDoubleDropdown2(false);
     };
 
+    //   const showApiData = async () => {
+    //     try {
+    //         const apiData = await getApiInfo();
+    //         console.log(apiData);
+
+    //     } catch (error) {
+    //         console.error('Error al obtener los datos de la API:', error);
+    //     }
+    // };
+
+    const UserComponent = () => {
+
+      const [userData, setUserData] = useState(null);
+  
+      useEffect(() => {
+          // Lógica para obtener los datos de la API y establecerlos en el estado
+          fetch('https://665a746b003609eda45df1d5.mockapi.io/info_cotizacion')
+              .then(response => response.json())
+              .then(data => setUserData(data))
+              .catch(error => console.error('Error al obtener los datos:', error));
+      }, []);}
+
   return (
     <>
-      <div>
-  <label htmlFor="countries" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Materia Prima</label>
-      <button
-        id="multiLevelDropdownButton"
-        onClick={toggleDropdown}
-        className="text-black focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center "
-        type="button"
-        style={{backgroundColor:'#33DAFF'}}
-      >
-        En Stock{' '}
-        <svg
-          className="w-2.5 h-2.5 ms-3"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 10 6"
-        >
-          <path
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="m1 1 4 4 4-4"
-          />
-        </svg>
-      </button>
+    <div>
+      <label htmlFor="countries" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Materia Prima</label>
+          <button
+            id="multiLevelDropdownButton"
+            onClick={toggleDropdown}
+            className="text-black focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center "
+            type="button"
+            style={{backgroundColor:'#33DAFF'}}
+          >
+            En Stock{' '}
+            <svg
+              className="w-2.5 h-2.5 ms-3"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 10 6"
+            >
+              <path
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="m1 1 4 4 4-4"
+              />
+            </svg>
+          </button>
 
-      {/* FormCard menu */}
-      {showDropdown && (
-        <div
-          id="multi-dropdown"
-          className="z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
-        >
-          <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="multiLevelDropdownButton">
+          {/* FormCard menu */}
+          {showDropdown && (
+            <div
+              id="multi-dropdown"
+              className="z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+            >
+              <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="multiLevelDropdownButton">
 
-            <li>
-              <button
-                id="doubleDropdownButton"
-                onClick={toggleDoubleDropdown1}
-                className="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                type="button"
-              >
-                
-                Telas
-                <svg
-                  className="w-2.5 h-2.5 ms-3 rtl:rotate-180"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 6 10"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="m1 9 4-4-4-4"
-                  />
-                </svg>
-              </button>
-              {showDoubleDropdown1 && (
-                <div
-                  id="doubleDropdown"
-                  className="z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
-                >
-                  <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="doubleDropdownButton">
-                    <li>
-                      <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                        Overview
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                        My downloads
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                        Billing
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                        Rewards
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              )}
-            </li>
+                <li>
+                  <button
+                    id="doubleDropdownButton"
+                    onClick={toggleDoubleDropdown1}
+                    className="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    type="button"
+                  >
+                    
+                    Telas
+                    <svg
+                      className="w-2.5 h-2.5 ms-3 rtl:rotate-180"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 6 10"
+                    >
+                      <path
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="m1 9 4-4-4-4"
+                      />
+                    </svg>
+                  </button>
+                  {showDoubleDropdown1 && (
+                    <div
+                      id="doubleDropdown"
+                      className="z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+                    >
+                      <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="doubleDropdownButton">
+                        <li>
+                          <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                          
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  )}
+                </li>
 
-            <li>
-              <button
-                id="doubleDropdownButton"
-                onClick={toggleDoubleDropdown2}
-                className="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                type="button"
-              >
-                
-                Hilo
-                <svg
-                  className="w-2.5 h-2.5 ms-3 rtl:rotate-180"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 6 10"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="m1 9 4-4-4-4"
-                  />
-                </svg>
-              </button>
-              {showDoubleDropdown2 && (
-                <div
-                  id="doubleDropdown"
-                  className="z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
-                >
-                  <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="doubleDropdownButton">
-                    <li>
-                      <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                        Overview
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                        My downloads
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                        Billing
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                        Rewards
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              )}
-            </li>
+                <li>
+                  <button
+                    id="doubleDropdownButton"
+                    onClick={toggleDoubleDropdown2}
+                    className="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    type="button"
+                  >
+                    
+                    Hilo
+                    <svg
+                      className="w-2.5 h-2.5 ms-3 rtl:rotate-180"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 6 10"
+                    >
+                      <path
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="m1 9 4-4-4-4"
+                      />
+                    </svg>
+                  </button>
+                  {showDoubleDropdown2 && (
+                    <div
+                      id="doubleDropdown"
+                      className="z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+                    >
+                      <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="doubleDropdownButton">
+                        <li>
+                          <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                            Overview
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  )}
+                </li>
 
-            <li>
-              <button
-                id="doubleDropdownButton"
-                onClick={toggleDoubleDropdown3}
-                className="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                type="button"
-              >
-                
-                Botones
-                <svg
-                  className="w-2.5 h-2.5 ms-3 rtl:rotate-180"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 6 10"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="m1 9 4-4-4-4"
-                  />
-                </svg>
-              </button>
-              {showDoubleDropdown3 && (
-                <div
-                  id="doubleDropdown"
-                  className="z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
-                >
-                  <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="doubleDropdownButton">
-                    <li>
-                      <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                        Overview
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                        My downloads
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                        Billing
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                        Rewards
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              )}
-            </li>
-          </ul>
-        </div>
-      )}
+                <li>
+                  <button
+                    id="doubleDropdownButton"
+                    onClick={toggleDoubleDropdown3}
+                    className="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    type="button"
+                  >
+                    
+                    Botones
+                    <svg
+                      className="w-2.5 h-2.5 ms-3 rtl:rotate-180"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 6 10"
+                    >
+                      <path
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="m1 9 4-4-4-4"
+                      />
+                    </svg>
+                  </button>
+                  {showDoubleDropdown3 && (
+                    <div
+                      id="doubleDropdown"
+                      className="z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+                    >
+                      <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="doubleDropdownButton">
+                        <li>
+                          <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                            Overview
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  )}
+                </li>
+              </ul>
+            </div>
+          )}
     </div>
     </>
   )
 }
+
