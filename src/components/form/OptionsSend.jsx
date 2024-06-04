@@ -3,6 +3,7 @@ import { useState} from "react";
 import { OptionsInput } from "./OptionsInput";
 import { DropDown } from "./DropDown";
 
+
 export const OptionsSend = () => {
 
     const {postForm, getApiInfo} = useMtFormApi("/info_cotizacion")
@@ -26,10 +27,12 @@ export const OptionsSend = () => {
         })
     }
 
-    const handleSubmit = (event) =>{
+    const handleSubmit = (event) => {
         event.preventDefault();
         postForm(formLote)
     }
+    
+
 
   return (
     <>
@@ -64,8 +67,9 @@ export const OptionsSend = () => {
                 <input name="salario_hora" type="text" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-white" code="salario_hora" required onChange={handleChange} />
             </div>
             <div>
-                <DropDown name="materia_prima" code="materia_prima" value={formLote.materia_prima} onChange={handleChange} />
+                <DropDown name="materia_prima" code="materia_prima" value={formLote.materia_prima} onChange={handleChange}/>
             </div>
+            
         </div>
         <input type="submit" className=" size-1/5 h-12 bg-violet-700 text-white p-2 rounded hover:bg-violet-900 cursor-pointer" required/>
         </form>
