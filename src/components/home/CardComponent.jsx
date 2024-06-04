@@ -1,28 +1,51 @@
 import React from 'react'
 import '/src/styles/CardStyles.css'
-export const CardComponent = () => {
+export const CardComponent = ({data}) => {
+    let logo = ''
+    const selectImage = (category) =>{
+        switch(data.prenda_type){
+            case 'Chaqueta':
+                logo = '/images/abrigo.png'
+                return
+            case 'Medias':
+                logo = '/images/calcetines.png'
+                return
+            case 'Shorts':
+                logo = '/images/shorts.png'
+                return
+            case 'Jeans':
+                logo = '/images/jeans.png'
+                return
+            case 'Camisa':
+                logo = '/images/camiseta.png'
+                return
+            case 'Falda':
+                logo = '/images/falda.png'
+                return
+            case 'Sweater':
+                logo = '/images/sweater.png'
+                return
+            case 'Vestido':
+                logo = '/images/vestir.png'
+                return
+        }
+    }
+    selectImage(data)
   return (
     <>
         <div className="card-component">
         <div className="image_container">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="image">
-            <path
-                d="M20 5H4V19L13.2923 9.70649C13.6828 9.31595 14.3159 9.31591 14.7065 9.70641L20 15.0104V5ZM2 3.9934C2 3.44476 2.45531 3 2.9918 3H21.0082C21.556 3 22 3.44495 22 3.9934V20.0066C22 20.5552 21.5447 21 21.0082 21H2.9918C2.44405 21 2 20.5551 2 20.0066V3.9934ZM8 11C6.89543 11 6 10.1046 6 9C6 7.89543 6.89543 7 8 7C9.10457 7 10 7.89543 10 9C10 10.1046 9.10457 11 8 11Z"
-            ></path>
-            </svg>
+            <img className='image-logo' src={logo} alt="" />
         </div>
         <div className="title">
-            <span>New brand name</span>
+            <span>Linea de producción:</span>
+            <div className="category-card">
+            <span>{data.prenda_type}</span>
         </div>
+        </div>
+
         <div className="size">
             <span>Materias Prima</span>
-            <ul className="list-size">
-            <li className="item-list"><button className="item-list-button">37</button></li>
-            <li className="item-list"><button className="item-list-button">38</button></li>
-            <li className="item-list"><button className="item-list-button">39</button></li>
-            <li className="item-list"><button className="item-list-button">40</button></li>
-            <li className="item-list"><button className="item-list-button">41</button></li>
-            </ul>
         </div>
         <div className="action">
             <div className="price">
