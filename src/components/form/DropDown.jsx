@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { OptionsSend } from "./OptionsSend";
+import { FormRender } from "./FormRender";
 import { useMtFormApi } from "../../hooks/useMtFormApi";
 import { DropCategoyComponent } from "./DropCategoyComponent";
 import { CategoryListComponent } from "./CategoryListComponent";
@@ -68,11 +68,11 @@ export const DropDown = () => {
       <label htmlFor="materia_prima" className="relative block mb-2 text-sm font-medium text-gray-900 dark:text-white">Materia Prima</label>
           <button
             onClick={toggleDropdown}
-            className="text-black focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center "
+            className="text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center "
             type="button"
-            style={{backgroundColor:'#33DAFF'}}
+            style={{backgroundColor:'#6D28D9'}}
           >
-            En Stock{' '}
+            En Stock{''}
             <svg
               className="w-2.5 h-2.5 ms-3"
               aria-hidden="true"

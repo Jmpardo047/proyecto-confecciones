@@ -1,4 +1,3 @@
-import React from 'react'
 
 export const CategoryListComponent = ({data}) => {
     const saveItem = (item) =>{

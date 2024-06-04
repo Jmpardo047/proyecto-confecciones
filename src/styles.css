@@ -50,7 +50,6 @@
     justify-content: flex-end;
     gap: 5em;
     align-items: center;
-    background: rgb(86,71,135);
     background: linear-gradient(164deg, rgba(86,71,135,1) 8%, rgba(138,123,167,1) 64%, rgba(219,203,216,1) 100%);
     padding: 4em 0;
     height: 80vh;
@@ -63,10 +62,10 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color:#33DAFF;
+      background: linear-gradient(164deg, rgba(86,71,135,1) 8%, rgba(138,123,167,1) 64%, rgba(219,203,216,1) 100%);
       padding: 2em 0;
       height: 25vh;
-      color: black;
+      color: white;
       h1{
           text-align: center;
       }
@@ -143,6 +142,9 @@
     width: 60%;
     height: 2em;
     margin-top: 2vh;
+  }
+  .inputs{
+    background-color: #d5c9ff;
   }
   @media(max-width:800px){
     .form{
