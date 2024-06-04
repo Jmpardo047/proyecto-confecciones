@@ -4,7 +4,7 @@ import { OptionsInput } from "./OptionsInput";
 import { DropDown } from "./DropDown";
 import { MaterialRenderComponent } from "./MaterialRenderComponent";
 
-export const OptionsSend = () => {
+export const FormRender = () => {
 
     const {postForm, getApiInfo} = useMtFormApi("/info_cotizacion")
 
@@ -43,11 +43,11 @@ export const OptionsSend = () => {
 
   return (
     <>
-        <div className="main-container h-screen w-full " style={{backgroundColor:'#F0FAFC'}}>
+        <div className="main-container h-screen w-full  " style={{backgroundColor:'#F0FAFC'}}>
         <div className='main-header banner-form '>
             <h1 className='main-title text-5xl sm:text-7xl font-bold'>Crea tu lote</h1>
         </div>
-        <form className="flex flex-col items-center justify-around  h-fit w-4/5  sm:h-3/5 mt-5 rounded-lg p-5 mx-auto sm:w-3/5 mb-4"  style={{backgroundColor:"black"}} onSubmit={handleSubmit}>
+        <form className="flex flex-col items-center justify-around  h-fit w-4/5  sm:h-3/5 mt-5 rounded-lg p-5 mx-auto sm:w-3/5 mb-4"  style={{backgroundColor:"#3B3E3E  "}} onSubmit={handleSubmit}>
           <div className="text-center text-white">
             <p className="font-bold ">Client Form</p>
             <p>Ingresa los datos para hacer tu cotización personalizada</p>
@@ -59,26 +59,26 @@ export const OptionsSend = () => {
             </div>
             <div>
             <label htmlFor="number_empleados" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Numero Empleados</label>
-                <input name="number_empleados" type="number" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-white" code="number_empleados"   onChange={handleChange} required/>
+                <input name="number_empleados" type="number" className="bg-gray-50 border border-white text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 inputs dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500" code="number_empleados"   onChange={handleChange} required/>
             </div>
             <div>
             <label htmlFor="salario_base" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Salario Base</label>
-                <input name="salario_base" type="number" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-white" code="salario_base" onChange={handleChange} required />
+                <input name="salario_base" type="number" className="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 inputs focus:border-blue-500 block w-full p-2.5 dark:border-white dark:placeholder-gray-400 dark:text-black  dark:focus:ring-blue-500 dark:focus:border-blue-500" code="salario_base" onChange={handleChange} required />
             </div>
             <div>
             <label htmlFor="cantidad_producto" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Cantidad producto</label> 
-                <input name="cantidad_producto" type="number" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-white"  code="cantidad_producto" onChange={handleChange} required />
+                <input name="cantidad_producto" type="number" className="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 inputs focus:border-blue-500 block w-full p-2.5 dark:border-white dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500 "  code="cantidad_producto" onChange={handleChange} required />
             </div>
             <div>
             <label htmlFor="salario_hora" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Salario Hora</label> 
-                <input name="salario_hora" type="number" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-white" code="salario_hora" required onChange={handleChange} />
+                <input name="salario_hora" type="number" className="bg-gray-50 border border-white text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 inputs dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500" code="salario_hora" required onChange={handleChange} />
             </div>
             <div>
                 <DropDown name="materia_prima" code="materia_prima" value={formLote.materia_prima} onChange={handleChange} />
             </div>
         </div>
         <MaterialRenderComponent></MaterialRenderComponent>
-        <input type="submit" className=" size-1/5 h-12 bg-violet-700 text-white p-2 rounded hover:bg-violet-900 cursor-pointer mt-5" required/>
+        <input type="submit" className=" size-1/5 h-12 bg-violet-700 text-white p-2 rounded-lg hover:bg-violet-900 cursor-pointer mt-5" required/>
         </form>
     </div>
 

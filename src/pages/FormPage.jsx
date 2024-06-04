@@ -1,10 +1,10 @@
-import { OptionsSend } from "../components/form/OptionsSend"
+import { FormRender } from "../components/form/FormRender"
 
 
 
 export const FormPage = () => {
   return (
-    <OptionsSend></OptionsSend>
+    <FormRender/>
   )
 }
 
