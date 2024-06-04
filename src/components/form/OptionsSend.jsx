@@ -9,7 +9,7 @@ export const OptionsSend = () => {
 
     const [formLote, setFormLote] = useState({
 
-        prenda_type: "",
+        prenda_type: localStorage.getItem('category')??"",
         cantidad_producto: "",
         number_empleados: "",
         salario_base: "",
@@ -25,7 +25,6 @@ export const OptionsSend = () => {
             [name]:value
         })
     }
-
     const handleSubmit = (event) =>{
         event.preventDefault();
         postForm(formLote)

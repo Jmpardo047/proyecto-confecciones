@@ -1,6 +1,11 @@
 import React from 'react'
 import '/src/styles/CardStyles.css'
-export const CardComponent = () => {
+export const CardComponent = ({data}) => {
+    const selectImage = (category) =>{
+        switch(data.category){
+            
+        }
+    }
   return (
     <>
         <div className="card-component">
@@ -16,13 +21,6 @@ export const CardComponent = () => {
         </div>
         <div className="size">
             <span>Materias Prima</span>
-            <ul className="list-size">
-            <li className="item-list"><button className="item-list-button">37</button></li>
-            <li className="item-list"><button className="item-list-button">38</button></li>
-            <li className="item-list"><button className="item-list-button">39</button></li>
-            <li className="item-list"><button className="item-list-button">40</button></li>
-            <li className="item-list"><button className="item-list-button">41</button></li>
-            </ul>
         </div>
         <div className="action">
             <div className="price">
