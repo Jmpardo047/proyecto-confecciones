@@ -135,6 +135,15 @@
     justify-content: center;
   }
 
+  .multi-dropdown{
+    position: absolute;
+  }
+  .materials-container{
+    border: 1px solid#DBDBDB;
+    width: 60%;
+    height: 2em;
+    margin-top: 2vh;
+  }
   @media(max-width:800px){
     .form{
       position: fixed;
@@ -144,4 +153,6 @@
       overflow: scroll;
       overflow-x: hidden;
     }
+
+
   }

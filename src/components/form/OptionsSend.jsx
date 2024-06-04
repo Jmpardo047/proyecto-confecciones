@@ -2,7 +2,7 @@ import { useMtFormApi } from "../../hooks/useMtFormApi";
 import { useState} from "react";
 import { OptionsInput } from "./OptionsInput";
 import { DropDown } from "./DropDown";
-
+import { MaterialRenderComponent } from "./MaterialRenderComponent";
 
 export const OptionsSend = () => {
 
@@ -31,16 +31,15 @@ export const OptionsSend = () => {
         let costosIndirectos = 50;
         let salarioFinal = (parseInt(salario_base)*parseInt(salario_hora));
         let costoTrabajadores = (parseInt(number_empleados)*parseInt(salarioFinal))+(parseInt(number_empleados)*costosIndirectos)+(parseInt(number_empleados)*beneficios);
-        console.log(costoTrabajadores)
+        
 
-    const handleSubmit = (event) => {
+        console.log(costoTrabajadores)
     }
+    const handleSubmit = (event) =>{
         event.preventDefault();
         calcFinalCost(formLote);
         postForm(formLote)
     }
-    
-
 
   return (
     <>
@@ -60,7 +59,7 @@ export const OptionsSend = () => {
             </div>
             <div>
             <label htmlFor="number_empleados" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Numero Empleados</label>
-                <input name="number_empleados" type="number" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-white" code="number_empleados"   onChange={handleChange} required />
+                <input name="number_empleados" type="number" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-white" code="number_empleados"   onChange={handleChange} required/>
             </div>
             <div>
             <label htmlFor="salario_base" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Salario Base</label>
@@ -75,10 +74,10 @@ export const OptionsSend = () => {
                 <input name="salario_hora" type="number" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-white" code="salario_hora" required onChange={handleChange} />
             </div>
             <div>
-                <DropDown name="materia_prima" code="materia_prima" value={formLote.materia_prima} onChange={handleChange}/>
+                <DropDown name="materia_prima" code="materia_prima" value={formLote.materia_prima} onChange={handleChange} />
             </div>
-            
         </div>
+        <MaterialRenderComponent></MaterialRenderComponent>
         <input type="submit" className=" size-1/5 h-12 bg-violet-700 text-white p-2 rounded hover:bg-violet-900 cursor-pointer mt-5" required/>
         </form>
     </div>
