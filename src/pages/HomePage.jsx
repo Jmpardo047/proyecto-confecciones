@@ -21,7 +21,7 @@ export const HomePage = () => {
       : null
     }
     <BannerComponent/>
-    <div className="render-cards">
+    <div id="render-cards" className="render-cards">
       <CardsRenderComponent></CardsRenderComponent>
     </div>  
     <div className="button-material">

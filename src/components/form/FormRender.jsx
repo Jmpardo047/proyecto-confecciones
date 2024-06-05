@@ -3,10 +3,10 @@ import { useState, useEffect } from "react";
 import { OptionsInput } from "./OptionsInput";
 import { DropDown } from "./DropDown";
 import { MaterialRenderComponent } from "./MaterialRenderComponent";
-
+import { useNavigate } from 'react-router-dom'
 export const FormRender = () => {
     const { postForm, getApiInfo } = useMtFormApi("/info_cotizacion");
-
+    const navigate = useNavigate();
     const [formLote, setFormLote] = useState({
         prenda_type: localStorage.getItem('category') ?? "",
         cantidad_producto: "",
@@ -69,6 +69,7 @@ export const FormRender = () => {
         if (formLote.costo_final && submitFlag) {
             postForm(formLote);
             setSubmitFlag(false); // Reset flag after submission
+            navigate('/Home')
         }
     }, [formLote.costo_final, submitFlag]);
 
