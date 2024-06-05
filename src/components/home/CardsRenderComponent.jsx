@@ -3,9 +3,8 @@ import {CardComponent} from './CardComponent'
 import { useMtFormApi } from '../../hooks/useMtFormApi'
 import { useEffect } from 'react'
 export const CardsRenderComponent = () => {
-    const {postForm, getApiInfo} = useMtFormApi("/info_cotizacion")
+    const {postForm, getApiInfo,deleteForm} = useMtFormApi("/info_cotizacion")
     const [info, setInfo] = useState([])
-    const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     useEffect(() => {
         const fetchData = async () => {
@@ -20,9 +19,16 @@ export const CardsRenderComponent = () => {
         };
         fetchData();
     }, [getApiInfo]);
-    if (loading) {
-        return <p>Cargando datos...</p>;
-    }
+
+    const handleDelete = async (id) => {
+        try {
+            await deleteForm(id);
+            setInfo(info.filter(item => item.id !== id));
+        } catch (err) {
+            setError(err);
+        }
+    };
+
 
     if (error) {
         return <p>Error: {error.message}</p>;
@@ -32,7 +38,7 @@ export const CardsRenderComponent = () => {
     {
         info.map((item) => (
             <div className="card-container" key={item.id}>
-                <CardComponent data={item}/>
+                <CardComponent onDelete={handleDelete} data={item}/>
             </div>  
         ))
     }

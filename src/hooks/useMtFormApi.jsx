@@ -41,5 +41,20 @@ export const useMtFormApi = (endpoint) =>{
                 throw err;
             }
         }, [url]);
-        return {postForm,getApiInfo}
+
+        const deleteForm = useCallback(async (id) => {
+            try {
+                const response = await fetch(`${url}/${id}`, {
+                    method: 'DELETE'
+                });
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+            } catch (err) {
+                setError(err);
+                throw err;
+            }
+        }, [url]);
+
+        return{getApiInfo,postForm,deleteForm}
 }

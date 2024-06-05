@@ -113,6 +113,13 @@
     cursor: pointer;
     z-index: 2;
   }
+  .card-x{
+    position: absolute;
+    top: 0.2em;
+    right: 0.3em;
+    cursor: pointer;
+    z-index: 10;
+  }
   .link-button{
     display: flex;
     justify-content: center;
@@ -132,6 +139,7 @@
   .card-container{
     display: flex;
     justify-content: center;
+    height: auto;
   }
 
   .multi-dropdown{

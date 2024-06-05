@@ -123,7 +123,7 @@ export const FormRender = () => {
                             <input name="cantidad_producto" type="number" className="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 inputs focus:border-blue-500 block w-full p-2.5 dark:border-white dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500" code="cantidad_producto" onChange={handleChange} required />
                         </div>
                         <div>
-                            <label htmlFor="salario_hora" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Salario Hora</label>
+                            <label htmlFor="salario_hora" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Horas de Producción</label>
                             <input name="salario_hora" type="number" className="bg-gray-50 border border-white text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 inputs dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500" code="salario_hora" required onChange={handleChange} />
                         </div>
                         <div>
