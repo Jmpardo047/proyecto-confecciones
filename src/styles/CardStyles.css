@@ -13,8 +13,8 @@
     flex-direction: column;
     gap: 0.75rem;
     padding: 1rem;
-    width: 14rem;
-    height: 22rem;
+    padding-top: 2em;
+    width: 16rem;
     background-color: rgba(0, 0, 0, 0.751);
   
     border-radius: 1rem;
@@ -103,9 +103,10 @@
   
   .action {
     display: flex;
+    flex-direction: column;
+    color: white;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
   }
   
   .price {
@@ -144,4 +145,21 @@
   .category-card{
     text-align: center;
     color: var(--light);
+  }
+
+  .description{
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    flex-wrap: wrap;
+  }
+  
+  .mt-prima{
+    background-color: #21212bd2;
+    padding: 0.2em;
+    border-radius: 0.5em;
+  }
+
+  .content-card{
+    color: white;
   }
