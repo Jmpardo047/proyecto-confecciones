@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { MaterialButtonComponent } from './MaterialButtonComponent';
 
 export const MaterialRenderComponent = () => {
     const [localStorageContent, setLocalStorageContent] = useState({});
@@ -52,12 +53,9 @@ export const MaterialRenderComponent = () => {
 
     return (
         <div className="materials-container">
-
-            <ul>
-                {Object.keys(localStorageContent).map(key => (
-                    <li key={key}> {String(localStorageContent[key][0])}</li>
+                {Object.keys(localStorageContent).map(item => (
+                    <MaterialButtonComponent key={item} name={String(localStorageContent[item][0])}/>
                 ))}
-            </ul>
         </div>
     );
 };
