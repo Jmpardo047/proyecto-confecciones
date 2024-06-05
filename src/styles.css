@@ -141,8 +141,9 @@
   .materials-container{
     border: 1px solid#DBDBDB;
     width: 60%;
-    height: 2em;
+    height: 8em;
     margin-top: 2vh;
+    color: white;
   }
   @media(max-width:800px){
     .form{

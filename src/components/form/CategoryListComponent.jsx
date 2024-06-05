@@ -2,7 +2,7 @@ import React from 'react'
 
 export const CategoryListComponent = ({data}) => {
     const saveItem = (item) =>{
-        localStorage.setItem(`${item.id}`,`${item.name}`)
+        localStorage.setItem(`${item.id}`,`${JSON.stringify([item.name,item.cost])}`)
         console.log(localStorage)
     }
   return (
