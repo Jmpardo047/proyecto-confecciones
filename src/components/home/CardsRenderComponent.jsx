@@ -13,8 +13,6 @@ export const CardsRenderComponent = () => {
                 setInfo(data);
             } catch (err) {
                 setError(err);
-            } finally {
-                setLoading(false);
             }
         };
         fetchData();
