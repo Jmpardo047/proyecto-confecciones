@@ -47,7 +47,7 @@ export const FormRender = () => {
         <div className='main-header banner-form '>
             <h1 className='main-title text-5xl sm:text-7xl font-bold'>Crea tu lote</h1>
         </div>
-        <form className="flex flex-col items-center justify-around  h-fit w-4/5  sm:h-3/5 mt-5 rounded-lg p-5 mx-auto sm:w-3/5 mb-4"  style={{backgroundColor:"#3B3E3E  "}} onSubmit={handleSubmit}>
+        <form className="flex flex-col items-center justify-around  h-fit w-4/5  sm:h-3/5 mt-5 rounded-lg p-5 mx-auto sm:w-3/5 mb-4 card-form"  style={{backgroundColor:"#3B3E3E  "}} onSubmit={handleSubmit}>
           <div className="text-center text-white">
             <p className="font-bold ">Client Form</p>
             <p>Ingresa los datos para hacer tu cotización personalizada</p>

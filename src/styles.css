@@ -58,6 +58,10 @@
         text-align: center;
     }
   }
+  .card-form{
+    box-shadow: 0px 15px 50px rgb(209, 162, 252);
+    
+  }
     .banner-form{
       display: flex;
       justify-content: center;
@@ -138,14 +142,40 @@
     position: absolute;
   }
   .materials-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
     border: 1px solid#DBDBDB;
     width: 60%;
-    height: 8em;
+    height: auto;
     margin-top: 2vh;
-    color: white;
+    color: black;
+    padding: 1em;
+    font-size: 1.2em;
+    border-radius: 1em;
+    box-shadow: 0px 5px 15px rgba(221, 188, 250, 0.2);
   }
   .inputs{
     background-color: #d5c9ff;
+    border: solid 2px white;
+  }
+  .bt-material-component{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:0.5rem;
+    background-color: #d1c6f8;
+    border: #564787 solid 3.5px;
+    box-shadow: 0px 5px 15px rgba(222, 189, 251, 0.2);
+    width: fit-content;
+    border-radius: 1.5em;
+    height: 1rem;
+    padding: 1em;
+    font-size: 1rem;
+  }
+  .x-formp{
+    width: 1rem;
+    cursor: pointer;
   }
   @media(max-width:800px){
     .form{
