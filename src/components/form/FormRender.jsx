@@ -69,6 +69,7 @@ export const FormRender = () => {
         if (formLote.costo_final && submitFlag) {
             postForm(formLote);
             setSubmitFlag(false); // Reset flag after submission
+            localStorage.clear()
             navigate('/Home')
         }
     }, [formLote.costo_final, submitFlag]);
