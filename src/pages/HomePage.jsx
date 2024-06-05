@@ -6,8 +6,12 @@ import { useState } from 'react'
 import { RouteButtonComponent } from '../components/home/RouteButtonComponent'
 import { ButtonDecorComponent } from '../components/home/ButtonDecorComponent'
 import { CardsRenderComponent } from '../components/home/CardsRenderComponent'
+import { useEffect } from "react"
 export const HomePage = () => {
   const [formActive, setFormActive] = useState(false)
+  useEffect(() => {
+    localStorage.clear()
+  }, [])
   const toggleDisplay = (event) =>{
     setFormActive(!formActive);
   }
