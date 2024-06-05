@@ -155,9 +155,20 @@
   }
   
   .mt-prima{
-    background-color: #21212bd2;
-    padding: 0.2em;
-    border-radius: 0.5em;
+    margin-top: 0.5em;
+      display: flex;
+      color: black;
+      flex-direction: row;
+      align-items: center;
+      gap:0.5rem;
+      background-color: #d1c6f8;
+      border: #564787 solid 3.5px;
+      box-shadow: 0px 5px 15px rgba(222, 189, 251, 0.2);
+      width: fit-content;
+      border-radius: 1.5em;
+      height: 1rem;
+      padding: 1em;
+      font-size: 1rem;
   }
 
   .content-card{
